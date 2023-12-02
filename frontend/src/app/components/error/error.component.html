@@ -1,0 +1,19 @@
+<app-flash></app-flash>
+<app-notification></app-notification>
+<!-- This is an A11y Change (#2, added tabindex attribute to ensure skip link works correctly for tab key) -->
+<main class="center" id="main" tabindex="-1">
+  <div class="background">
+    <div class="special-header"><h1>Error</h1></div>
+    <br />
+    <div class="line-spacer"></div>
+    <br /><br />
+    <!-- Could potentially change class to 'background' here -->
+    <div class="about">
+      <!-- This is a Semantic HTML Change (#2, changed h1 to h2 to fix top-level headings with modified CSS) -->
+      <h2>{{ status }}</h2>
+      <p>{{ message }}</p>
+      <br />
+    </div>
+    <br /><br />
+  </div>
+</main>

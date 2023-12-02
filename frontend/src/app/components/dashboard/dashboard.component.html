@@ -1,0 +1,51 @@
+<app-flash></app-flash>
+<app-notification></app-notification>
+<!-- This is an A11y Change (#2, added tabindex attribute to ensure skip link works correctly for tab key) -->
+<main class="center" id="main" tabindex="-1">
+  <div class="special-header"><h1>Dashboard</h1></div>
+  <div *ngIf="hasItems">
+    <div class="chart-container">
+      <canvas id="PieChart">{{ chart }}</canvas>
+      <h2>Budget for each Item by Percentage</h2>
+    </div>
+    <div class="chart-container">
+      <canvas id="BarChart">{{ chart }}</canvas>
+      <h2>Budget and Spend for each Item by Dollar Amount</h2>
+    </div>
+    <br /><br /><br /><br /><br />
+    <div class="table-container">
+      <h2>Tabulated Budget and Spend for each Item</h2>
+      <table>
+        <tr>
+          <th>Item Title</th>
+          <th>Item Budget ($)</th>
+          <th>Item Spend ($)</th>
+          <th>Options</th>
+        </tr>
+        <tr *ngFor="let label of labelset; index as i">
+          <td>{{ label }}</td>
+          <td>{{ budgetset[i] }}</td>
+          <td>{{ spendset[i] }}</td>
+          <td>
+            <button class="constructive" (click)="onEdit(i)">Edit</button
+            >&nbsp;<button class="destructive" (click)="onDelete(i)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div *ngIf="!hasItems">
+    <br /><br />
+    <p>
+      You do not currently have any budget items. Start by clicking the button
+      below to create an item for your personal budget!
+    </p>
+    <br /><br /><br /><br />
+  </div>
+  <div class="option-container">
+    <br />
+    <button class="constructive" [routerLink]="['/add']">Add Item</button>
+  </div>
+</main>

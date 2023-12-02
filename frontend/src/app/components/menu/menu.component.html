@@ -1,0 +1,50 @@
+<!-- This is a Semantic HTML Change (#4, added header element to organize navigation content) -->
+<header>
+  <nav>
+    <ul>
+      <div class="left">
+        <!-- This is a Semantic HTML Change (#1, changed paths from absolute to relative so that pages work) -->
+        <li><a class="hoverable" [routerLink]="['/']">Home</a></li>
+        <li><a class="hoverable" [routerLink]="['/about']">About</a></li>
+      </div>
+      <div class="center">
+        <li>
+          <a [routerLink]="['/']"
+            ><img
+              src="assets/binoculars.png"
+              alt="binocular travel cache logo"
+              class="logo"
+          /></a>
+        </li>
+      </div>
+      <div class="right">
+        <li *ngIf="!isCurrentlyLoggedIn">
+          <a class="hoverable" [routerLink]="['/login']">Login</a>
+        </li>
+        <li *ngIf="!isCurrentlyLoggedIn">
+          <a class="hoverable" [routerLink]="['/signup']">Sign Up</a>
+        </li>
+        <li *ngIf="isCurrentlyLoggedIn">
+          <a class="hoverable" [routerLink]="['/dashboard']">Dashboard</a>
+        </li>
+        <li *ngIf="isCurrentlyLoggedIn">
+          <a class="hoverable" (click)="onLogout()">Logout</a>
+        </li>
+      </div>
+    </ul>
+  </nav>
+</header>
+
+<!-- This is a Semantic HTML Change (#3, added section element to organize banner content) -->
+<section>
+  <div class="hero">
+    <!-- This is an A11y Change (#1, added alt text for screen readers with modified CSS) -->
+    <img
+      class="house"
+      src="assets/bg.png"
+      alt="Background with smartphone and laptop displaying info graphics."
+    />
+    <h1 [routerLink]="['/']">Personal Budget</h1>
+    <h2>A personal budget management app</h2>
+  </div>
+</section>

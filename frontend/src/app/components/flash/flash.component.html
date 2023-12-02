@@ -1,0 +1,6 @@
+<div *ngIf="flashNotifications">
+  <div class="error" *ngFor="let message of errorMessages">{{ message }}</div>
+  <div class="success" *ngFor="let message of successMessages">
+    {{ message }}
+  </div>
+</div>

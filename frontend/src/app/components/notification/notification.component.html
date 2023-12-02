@@ -1,0 +1,26 @@
+<div
+  *ngIf="showNotification"
+  class="notification-container"
+  style="display: block"
+>
+  <div class="notification-content">
+    <div class="notification-header">
+      Your Session is About to Expire
+      <span class="close" (click)="onClose()">×</span>
+    </div>
+    <div class="notification-body">
+      <div class="notification-form-group">
+        <form method="POST" action="#" class="notification-form">
+          <p>
+            You will be logged out in approximately 20 seconds. Afterwards, you
+            will need to log in again to start a new session.
+          </p>
+          <br />
+          <button class="notification-btn" type="submit" (click)="onClose()">
+            OK
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
