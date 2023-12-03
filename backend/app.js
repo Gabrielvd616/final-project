@@ -18,7 +18,7 @@ let host = "localhost";
 
 //mount middleware
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+  res.header("Access-Control-Allow-Origin", "https://urchin-app-j9dc9.ondigitalocean.app/");
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, HEAD, OPTIONS, POST, PUT, DELETE"
