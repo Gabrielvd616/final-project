@@ -20,7 +20,7 @@ let host = "localhost";
 app.use(function (req, res, next) {
   res.header(
     "Access-Control-Allow-Origin",
-    "https://urchin-app-j9dc9.ondigitalocean.app/"
+    "https://urchin-app-j9dc9.ondigitalocean.app"
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
