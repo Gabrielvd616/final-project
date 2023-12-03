@@ -14,11 +14,14 @@ const app = express();
 
 //configure app
 let port = 3001;
-let host = "localhost";
+// let host = "localhost";
 
 //mount middleware
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://urchin-app-j9dc9.ondigitalocean.app/");
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://urchin-app-j9dc9.ondigitalocean.app/"
+  );
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, HEAD, OPTIONS, POST, PUT, DELETE"
@@ -86,7 +89,7 @@ db.sequelize
   .sync()
   .then(() => {
     //start the server
-    app.listen(port, host, () => {
+    app.listen(port, () => {
       console.log("Server is running on port", port);
     });
   })
