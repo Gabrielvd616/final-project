@@ -14,7 +14,7 @@ const app = express();
 
 //configure app
 let port = 3001;
-// let host = "localhost";
+let host = "localhost";
 
 //mount middleware
 app.use(function (req, res, next) {
@@ -89,7 +89,7 @@ db.sequelize
   .sync()
   .then(() => {
     //start the server
-    app.listen(port, () => {
+    app.listen(port, host, () => {
       console.log("Server is running on port", port);
     });
   })
