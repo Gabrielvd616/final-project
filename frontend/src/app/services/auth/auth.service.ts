@@ -6,7 +6,7 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  private baseURL: string = 'http://64.225.22.109:3001';
+  private baseURL: string = 'https://personalbudgetapi.us.to';
   private wasLoggedIn = false;
   private subject = new Subject<any>();
 
